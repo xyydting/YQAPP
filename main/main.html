@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>主页面</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="./../libs/mint-ui/style.css" rel="stylesheet" />
+		<link href="./../libs/global/common.css" rel="stylesheet" />
+		<link href="./main.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="app">
+			<div class="page-tabbar">
+				<div class="page-wrap">
+					<!-- tabcontainer -->
+					<mt-tab-container class="page-tabbar-container" v-model="bottomSelected" fixed>
+						<!--警示页面-->
+						<mt-tab-container-item id="警示">
+							<div class="warningBox">
+								<div class="topSearchBox">
+									<mt-header title="警示舆情" fixed>
+										<router-link to="/" slot="left">
+											<mt-button icon="back">返回</mt-button>
+										</router-link>
+										<mt-button icon="search" slot="right"></mt-button>
+									</mt-header>
+								</div>
+								<div class="topBar">
+									<mt-navbar v-model="warningSelected">
+										<mt-tab-item id="全部">全部</mt-tab-item>
+										<mt-tab-item id="一般舆情">一般舆情</mt-tab-item>
+										<mt-tab-item id="蓝色舆情">蓝色舆情</mt-tab-item>
+										<mt-tab-item id="橙色舆情">橙色舆情</mt-tab-item>
+										<mt-tab-item id="红色舆情">红色舆情</mt-tab-item>
+									</mt-navbar>
+								</div>
+
+								<div class="conBox">
+									<!-- tab-container -->
+									<mt-tab-container v-model="warningSelected">
+										<mt-tab-container-item id="全部" class="allWarn">
+											<mt-loadmore :top-method="loadTop" ref="loadmore">
+												<ul>
+													<li v-for="item in 30">
+														<div class="warnListBox">
+															<h4><i></i>2018反腐败新动向 中纪委剑指“两面人两面</h4>
+															<p>2018年1月11日至13日，中国共产党第十九届中央纪律检查委员会第二次全体会议在北京举行。</p>
+															<span style="color: #99CCD6;">20分钟前-</span>
+															<span>法院</span>
+															<span>人民网</span>
+														</div>
+													</li>
+												</ul>
+											</mt-loadmore>
+										</mt-tab-container-item>
+										<mt-tab-container-item id="一般舆情">
+											<!--<mt-cell v-for="n in 40" :title="'测试 ' + n" />-->
+										</mt-tab-container-item>
+										<mt-tab-container-item id="蓝色舆情">
+											<!--<mt-cell v-for="n in 60" :title="'选项 ' + n" />-->
+										</mt-tab-container-item>
+										<mt-tab-container-item id="橙色舆情">
+											<!--<mt-cell v-for="n in 60" :title="'选项 ' + n" />-->
+										</mt-tab-container-item>
+										<mt-tab-container-item id="红色舆情">
+											<!--<mt-cell v-for="n in 60" :title="'选项 ' + n" />-->
+										</mt-tab-container-item>
+									</mt-tab-container>
+								</div>
+							</div>
+						</mt-tab-container-item>
+						<!--订阅页面-->
+						<mt-tab-container-item id="订阅">
+							<div class="warningBox subscribeBox">
+								<div class="topSearchBox">
+									<mt-header title="订阅舆情" fixed>
+										<router-link to="/" slot="left">
+											<mt-button icon="back">返回</mt-button>
+										</router-link>
+										<mt-button slot="right">设置</mt-button>
+										<mt-button icon="search" slot="right"></mt-button>
+									</mt-header>
+								</div>
+								<div class="topBar">
+									<mt-navbar v-model="subscribeSelected">
+										<mt-tab-item id="全部">全部</mt-tab-item>
+										<mt-tab-item id="省内舆情">省内舆情</mt-tab-item>
+										<mt-tab-item id="中央指示">中央指示</mt-tab-item>
+										<mt-tab-item id="国内舆情">国内舆情</mt-tab-item>
+										<mt-tab-item id="国际舆情">国际舆情</mt-tab-item>
+									</mt-navbar>
+								</div>
+
+								<div class="conBox">
+									<!-- tab-container -->
+									<mt-tab-container v-model="subscribeSelected" class="allWarn">
+										<mt-tab-container-item id="全部">
+											<mt-loadmore :top-method="loadTop" ref="loadmore">
+												<ul>
+													<li v-for="item in 30">
+														<div class="warnListBox">
+															<h4>2018反腐败新动向 中纪委剑指“两面人两面</h4>
+															<p>2018年1月11日至13日，中国共产党第十九届中央纪律检查委员会第二次全体会议在北京举行。</p>
+															<span style="color: #99CCD6;">20分钟前-</span>
+															<span>法院</span>
+															<span>人民网</span>
+														</div>
+													</li>
+												</ul>
+											</mt-loadmore>
+										</mt-tab-container-item>
+										<mt-tab-container-item id="省内舆情">
+											<!--<mt-cell v-for="n in 40" :title="'测试 ' + n" />-->
+										</mt-tab-container-item>
+										<mt-tab-container-item id="中央指示">
+											<!--<mt-cell v-for="n in 60" :title="'选项 ' + n" />-->
+										</mt-tab-container-item>
+										<mt-tab-container-item id="国内舆情">
+											<!--<mt-cell v-for="n in 60" :title="'选项 ' + n" />-->
+										</mt-tab-container-item>
+										<mt-tab-container-item id="国际舆情">
+											<!--<mt-cell v-for="n in 60" :title="'选项 ' + n" />-->
+										</mt-tab-container-item>
+									</mt-tab-container>
+								</div>
+							</div>
+						</mt-tab-container-item>
+						<!--搜索页面-->
+						<mt-tab-container-item id="搜索">
+							<!--<mt-cell v-for="n in 7" :title="'搜索 ' + n" />-->
+						</mt-tab-container-item>
+						<!--统计-->
+						<mt-tab-container-item id="统计">
+							<div class="page-part">
+								<!-- cell -->
+								<!--<mt-cell v-for="n in 12" :title="'统计 ' + n" />-->
+							</div>
+							<router-link to="/">
+								<!-- button -->
+								<mt-button type="danger" size="large">退出</mt-button>
+							</router-link>
+						</mt-tab-container-item>
+					</mt-tab-container>
+				</div>
+				<!--底部导航-->
+				<div class="bottomBar">
+					<mt-tabbar v-model="bottomSelected" fixed>
+						<mt-tab-item id="警示" @click="bottomClick('警示')">
+							<span class="kuai"></span> 警示
+						</mt-tab-item>
+						<mt-tab-item id="订阅" @click="bottomClick('订阅')">
+							<span class="kuai"></span> 订阅
+						</mt-tab-item>
+						<mt-tab-item id="搜索" @click="bottomClick('搜索')">
+							<span class="kuai"></span> 搜索
+						</mt-tab-item>
+						<mt-tab-item id="统计" @click="bottomClick('统计')">
+							<span class="kuai"></span> 统计
+						</mt-tab-item>
+					</mt-tabbar>
+				</div>
+			</div>
+		</div>
+		<script src="./../libs/vue/vue-2.5.2.min.js"></script>
+		<script src="./../libs/mint-ui/index.js"></script>
+		<script src="./../libs/global/common.js"></script>
+		<script src="./main.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,101 @@
+/*初始化样式*/
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body,
+html {
+	width: 100%;
+	height: 100%;
+	background-color: #F5F5F9;
+}
+
+#app {
+	height: 100%;
+	overflow: auto;
+	position: relative;
+}
+
+
+/*top条*/
+
+.topSearchBox {
+	height: 50px;
+	border-bottom: solid 1px #E4E4E4;
+}
+
+.topSearchBox .mint-searchbar {
+	background-color: #fff;
+}
+
+.topSearchBox .mint-searchbar-inner,
+.topSearchBox .mint-searchbar-core {
+	background-color: #F5F5F9;
+	border-radius: 5px;
+}
+
+.topSearchBox .mint-searchbar-core {
+	padding-left: .3rem;
+}
+
+.topSearchBox .mint-searchbar-inner .mintui-search {
+	font-size: .8rem;
+}
+
+.topSearchBox .mint-searchbar-cancel {
+	font-size: .65rem;
+}
+
+
+/*指定内容列表*/
+
+.specifiedCon {
+	width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.specifiedCon ul li {
+	float: left;
+    padding: 0 .3rem 0 0;
+    list-style: none;
+    text-align: center;
+    font-size: .4rem;
+    margin: .2rem;
+    border-right: 1px solid #E4E4E4;
+    color: #29A1F7;
+}
+
+
+/*搜索列表*/
+
+.historyList {
+	width: 100%;
+	text-align: left;
+	border-top: 1px solid #E4E4E4;
+	border-bottom: 1px solid #E4E4E4;
+}
+
+.historyList p,
+.specifiedCon p {
+	font-size: .45rem;
+	line-height: 1.7rem;
+	color: #999999;
+}
+
+.historyList ul li {
+	float: left;
+	height: 1.2rem;
+	padding: 0 .5rem;
+	list-style: none;
+	text-align: center;
+	margin-bottom: .5rem;
+	font-size: .5rem;
+	line-height: 1.2rem;
+	background-color: #fff;
+	border-radius: .15rem;
+	margin-right: .4rem;
+	border: 1px solid #E4E4E4;
+}

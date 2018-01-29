@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>搜索</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="./../libs/mint-ui/style.css" rel="stylesheet" />
+		<link href="./../libs/global/common.css" rel="stylesheet" />
+		<link href="./search.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="app">
+			<!--顶部条-->
+			<div class="topSearchBox">
+				<mt-search v-model="value" cancel-text="取消" placeholder="搜索">
+				</mt-search>
+			</div>
+			<div style="width: 94%; margin: 0 auto;">
+				<!--搜索指定内容-->
+				<div class="specifiedCon">
+					<p>搜索指定内容</p>
+					<ul>
+						<template v-for="item in 10">
+							<li><span>国内舆情</span></li>
+						</template>
+						<div style="clear: both;">
+						</div>
+					</ul>
+				</div>
+				<!--历史搜索-->
+				<div class="historyList">
+					<p>历史搜索</p>
+					<ul>
+						<template v-for="item in 10">
+							<li><span>国内舆情</span></li>
+						</template>
+						<div style="clear: both;">
+						</div>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="./../libs/vue/vue-2.5.2.min.js"></script>
+		<script src="./../libs/mint-ui/index.js"></script>
+		<script src="./../libs/global/common.js"></script>
+		<script src="./search.js"></script>
+	</body>
+
+</html>

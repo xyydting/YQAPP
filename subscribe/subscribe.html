@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>选择订阅频道</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="./../libs/mint-ui/style.css" rel="stylesheet" />
+		<link href="./../libs/global/common.css" rel="stylesheet" />
+		<link href="./subscribe.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="app">
+			<!--顶部条-->
+			<div class="topSearchBox">
+				<mt-header title="选择订阅频道" fixed>
+					<router-link to="/" slot="left">
+						<mt-button icon="back">返回</mt-button>
+					</router-link>
+				</mt-header>
+			</div>
+			<!--已订阅-->
+			<div class="subscribeList">
+				<p>已订阅</p>
+				<ul>
+					<template v-for="item in 10">
+						<li><span>国内舆情</span></li>
+					</template>
+					<div style="clear: both;"></li>
+				</ul>
+			</div>
+			<!--未订阅-->
+			<div class="subscribeList">
+				<p>已订阅</p>
+				<ul>
+					<template v-for="item in 10">
+						<li><span>全国热点</span></li>
+					</template>
+					<div style="clear: both;"></li>
+				</ul>
+			</div>
+			<!--按钮-->
+			<div class="changeBtn">
+				<mt-button size="small" style="width: 100%;margin: 0 0 1rem;" type="primary">完成</mt-button>
+			</div>
+		</div>
+		<script src="./../libs/vue/vue-2.5.2.min.js"></script>
+		<script src="./../libs/mint-ui/index.js"></script>
+		<script src="./../libs/global/common.js"></script>
+		<script src="./subscribe.js"></script>
+	</body>
+
+</html>

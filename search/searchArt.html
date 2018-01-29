@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>搜索文章</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="./../libs/mint-ui/style.css" rel="stylesheet" />
+		<link href="./../libs/global/common.css" rel="stylesheet" />
+		<link href="./searchArt.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="app">
+			<div class="warningBox">
+				<div class="topSearchBox">
+					<mt-search v-model="value" cancel-text="取消" placeholder="搜索">
+					</mt-search>
+				</div>
+				<div class="topBar">
+					<mt-navbar v-model="warningSelected">
+						<mt-tab-item id="全部">全部</mt-tab-item>
+						<mt-tab-item id="新闻">新闻</mt-tab-item>
+						<mt-tab-item id="论坛">论坛</mt-tab-item>
+						<mt-tab-item id="微博">微博</mt-tab-item>
+						<mt-tab-item id="微信">微信</mt-tab-item>
+						<mt-tab-item id="客户端">客户端</mt-tab-item>
+					</mt-navbar>
+				</div>
+
+				<div class="conBox">
+					<!-- tab-container -->
+					<mt-tab-container v-model="warningSelected">
+						<mt-tab-container-item id="全部" class="allWarn">
+							<mt-loadmore :top-method="loadTop" ref="loadmore">
+								<ul>
+									<li v-for="item in 30">
+										<div class="warnListBox">
+											<h4><i></i>2018反腐败新动向 中纪委剑指“两面人两面</h4>
+											<p>2018年1月11日至13日，中国共产党第十九届中央纪律检查委员会第二次全体会议在北京举行。</p>
+											<span style="color: #99CCD6;">20分钟前-</span>
+											<span>法院</span>
+											<span>人民网</span>
+										</div>
+									</li>
+								</ul>
+							</mt-loadmore>
+						</mt-tab-container-item>
+						<mt-tab-container-item id="新闻">
+							<!--<mt-cell v-for="n in 40" :title="'测试 ' + n" />-->
+						</mt-tab-container-item>
+						<mt-tab-container-item id="论坛">
+							<!--<mt-cell v-for="n in 60" :title="'选项 ' + n" />-->
+						</mt-tab-container-item>
+						<mt-tab-container-item id="微博">
+							<!--<mt-cell v-for="n in 60" :title="'选项 ' + n" />-->
+						</mt-tab-container-item>
+						<mt-tab-container-item id="微信">
+							<!--<mt-cell v-for="n in 60" :title="'选项 ' + n" />-->
+						</mt-tab-container-item>
+						<mt-tab-container-item id="客户端">
+							<!--<mt-cell v-for="n in 60" :title="'选项 ' + n" />-->
+						</mt-tab-container-item>
+					</mt-tab-container>
+				</div>
+			</div>
+
+		</div>
+		<script src="./../libs/vue/vue-2.5.2.min.js"></script>
+		<script src="./../libs/mint-ui/index.js"></script>
+		<script src="./../libs/global/common.js"></script>
+		<script src="./searchArt.js"></script>
+	</body>
+
+</html>

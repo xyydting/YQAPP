@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>文章详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="./../libs/mint-ui/style.css" rel="stylesheet" />
+		<link href="./../libs/global/common.css" rel="stylesheet" />
+		<link href="./articleView.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="app">
+			<!--顶部条-->
+			<div class="topSearchBox">
+				<mt-header title="" fixed>
+					<router-link to="/" slot="left">
+						<mt-button icon="back">返回</mt-button>
+					</router-link>
+					<mt-button icon="search" slot="right"></mt-button>
+				</mt-header>
+			</div>
+			<!--内容-->
+			<div class="contentBox">
+				<h5>2018反腐败新动向 中纪委剑指“两面人两面</h5>
+				<div class="head">
+					<div style="float: left;">
+						<p>2018-1-1 22：00</p>
+						<p>人民网 </p>
+					</div>
+					<div style="float: right;"><span>蓝色舆情</span></div>
+					<div style="clear: both;"></div>
+				</div>
+				<div class="contentText" :style="{fontSize: conFontSize + 'rem'}">
+					<p>2018年1月11日至13日，中国共产党第十九届中央纪律检查委员会第二次全体会议在北京举行。</p>
+					<p>中共中央总书记、国家主席、中央军委主席习近平在中国共产党第十九届中央纪律检查委员会第二次全体会议上发表重要讲话。他强调，在中国特色社会主义新时代，完成伟大事业必须靠党的领导，党一定要有新气象新作为。要全面贯彻党的十九大精神，重整行装再出发，以永远在路上的执着把全面从严治党引向深入，开创全面从严治党新局面。</p>
+					<p>1月13日，第十九届中央纪律检查委员会第二次全体会议公报公布，其中明确指出，坚决清除对党不忠诚不老实、阳奉阴违的两面人、两面派，对表态多调门高、行动少落实差的严肃问责，聚焦党的十八大以来不收敛、不收手的领导干部，重点查处政治问题和经济问题相互交织形成利益集团的腐败案，着力解决选人用人、审批监管、资源开发、金融信贷等重点领域和关键环节的腐败问题，坚决查处涉黑“保护伞”。</p>
+					<p>以上六项工作被认为是今年反腐败斗争的新部署。六项工作中的六类人有哪些危害？围绕这六类人的反腐败工作如何开展？从今日起，《法制日报》视点版推出“2018反腐败新动向”系列报道，对这些问题一一剖析，敬请关注。</p>
+				</div>
+			</div>
+			<!--底部按钮组-->
+			<div class="bottomBar">
+				<mt-tabbar fixed>
+					<mt-tab-item id="收藏">
+						<div>
+							<i class="kuai"></i> 收藏
+						</div>
+					</mt-tab-item>
+					<mt-tab-item id="分享">
+						<div @click="shareClick">
+							<i class="kuai"></i> 分享
+						</div>
+					</mt-tab-item>
+					<mt-tab-item id="字号">
+						<div @click="fontSizeChange">
+							<i class="kuai"></i> 字号
+						</div>
+					</mt-tab-item>
+					<mt-tab-item id="原文">
+						<div>
+							<i class="kuai"></i> 原文
+						</div>
+					</mt-tab-item>
+				</mt-tabbar>
+			</div>
+			<!--分享弹窗-->
+			<mt-popup v-model="sharePop" popup-transition="popup-fade" position="bottom">
+				<div class="shareList">
+					<ul>
+						<li>
+							<div>
+								<img src="./../images/shareIcon1.png" alt="" />
+								<p>微信好友</p>
+							</div>
+						</li>
+						<li>
+							<div>
+								<img src="./../images/shareIcon2.png" alt="" />
+								<p>新浪微博</p>
+							</div>
+						</li>
+						<li>
+							<div>
+								<img src="./../images/shareIcon3.png" alt="" />
+								<p>生活圈</p>
+							</div>
+						</li>
+						<li>
+							<div>
+								<img src="./../images/shareIcon4.png" alt="" />
+								<p>复制链接</p>
+							</div>
+						</li>
+						<div style="clear: both;"></div>
+					</ul>
+					<mt-button size="small" style="width: 100%;" @click="closeShare">取消</mt-button>
+				</div>
+			</mt-popup>
+			<!--改变字号弹窗-->
+			<mt-popup v-model="fontSizePop" popup-transition="popup-fade" position="bottom">
+				<div class="changeFontList">
+					<ul>
+						<li>
+							<div @click="changeFont(1)">
+								<img src="./../images/shareIcon1.png" alt="" />
+								<p style="font-size:.4rem;">小号字</p>
+							</div>
+						</li>
+						<li>
+							<div  @click="changeFont(2)">
+								<img src="./../images/shareIcon2.png" alt="" />
+								<p style="font-size: .55rem;">中号字</p>
+							</div>
+						</li>
+						<li>
+							<div  @click="changeFont(3)">
+								<img src="./../images/shareIcon3.png" alt="" />
+								<p style="font-size: .7rem;">大号字</p>
+							</div>
+						</li>
+						<div style="clear: both;"></div>
+					</ul>
+				</div>
+			</mt-popup>
+
+		</div>
+		<script src="./../libs/vue/vue-2.5.2.min.js"></script>
+		<script src="./../libs/mint-ui/index.js"></script>
+		<script src="./../libs/global/common.js"></script>
+		<script src="./articleView.js"></script>
+	</body>
+
+</html>

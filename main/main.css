@@ -1,0 +1,142 @@
+/*初始化样式*/
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body,
+html {
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+}
+
+
+/*底部导航样式*/
+
+.bottomBar .mint-tabbar {
+	background-color: #E4E4E4;
+}
+
+.bottomBar .mint-tab-item .kuai {
+	display: block;
+	width: 1rem;
+	height: 1rem;
+	margin: 0 auto 5px;
+	background-color: #999999;
+	border-radius: 3px;
+}
+
+.bottomBar .mint-tab-item.is-selected .kuai {
+	background: #29A1F7;
+}
+
+.bottomBar .mint-tabbar>.mint-tab-item.is-selected {
+	background-color: #E4E4E4;
+	color: #29A1F7;
+}
+
+.bottomBar .mint-tab-item-label {
+	font-size: .5rem;
+}
+
+
+/*警示*/
+
+
+/*警示top 搜索条*/
+
+.warningBox .topSearchBox {
+	height: 50px;
+}
+
+.warningBox .topSearchBox .mint-header {
+	background: #1B82D2;
+	height: 50px;
+}
+
+.warningBox .topSearchBox .mint-header-title {
+	font-size: .85rem
+}
+
+.warningBox .topSearchBox .mintui {
+	font-size: .8rem;
+}
+
+
+/*警示top tab切换*/
+
+.warningBox .topBar {
+	position: fixed;
+	top: 50px;
+	z-index: 1000;
+	width: 100%;
+}
+
+.warningBox .topBar .mint-tab-item-label {
+	font-size: .66rem;
+	height: 1rem;
+	line-height: 1rem;
+}
+
+.warningBox .topBar .mint-navbar .mint-tab-item {
+	padding: 10px 0;
+	color: #999999;
+}
+
+.warningBox .topBar .mint-navbar .mint-tab-item.is-selected {
+	color: #0066FF;
+	margin-bottom: 0;
+	border-bottom: none;
+}
+
+.warningBox .topBar .mint-navbar .mint-tab-item.is-selected .mint-tab-item-label {
+	border-bottom: solid 3px #0066FF;
+}
+
+.warningBox .conBox {
+	margin: 50px 0;
+}
+
+
+/*警示 列表*/
+
+.allWarn li {
+	width: 96%;
+	margin: 5px 2%;
+	list-style: none;
+}
+
+.allWarn li .warnListBox {
+	border-bottom: solid 1px #E4E4E4;
+	position: relative;
+}
+.allWarn .warnListBox h4 i{
+	position: absolute;
+    top: .5em;
+    left: .5em;
+    display: block;
+    width: 1em;
+    height: 1em;
+    background-color: #FFDF25;
+    border-radius: 50%;
+    float: left;
+}
+.allWarn .warnListBox h4 {
+	text-indent: 2em;
+	font-size: .69rem;
+	color: #000;
+	font-weight: normal;
+}
+
+.allWarn .warnListBox p {
+	font-size: .58rem;
+	color: #8f8484;
+}
+
+.allWarn .warnListBox span {
+	font-size: .58rem;
+	color: #8f8484;
+	margin-right: .2rem;
+}
