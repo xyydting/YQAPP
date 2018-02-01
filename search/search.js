@@ -1,11 +1,12 @@
 var app = new Vue({
 	el: '#app',
 	data: {
-		value:'',
-		mess:{
-			name:"张三 "
+		value: '',
+		warningSelected: '网络热搜',
+		mess: {
+			name: "张三 "
 		}
-		
+
 	},
 	methods: {
 		bottomClick: function(data) {
@@ -13,8 +14,7 @@ var app = new Vue({
 				this.selected = data;
 			}
 		},
-		loadTop:function() {
-		}
+		loadTop: function() {}
 	},
 	created: function() {
 

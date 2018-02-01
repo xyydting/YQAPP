@@ -40,6 +40,67 @@
 						</div>
 					</ul>
 				</div>
+				<div>
+					<div class="topBar">
+						<mt-navbar v-model="warningSelected">
+							<mt-tab-item id="网络热搜">网络热搜</mt-tab-item>
+							<mt-tab-item id="省内热搜">省内热搜</mt-tab-item>
+							<mt-tab-item id="市内热搜">市内热搜</mt-tab-item>
+							<div class="changeArt">换一换</div>
+						</mt-navbar>
+					</div>
+
+					<div class="conBox">
+						<!-- tab-container -->
+						<mt-tab-container v-model="warningSelected">
+							<mt-tab-container-item id="网络热搜" class="allWarn">
+								<mt-loadmore :top-method="loadTop" ref="loadmore">
+									<ul>
+										<li v-for="(item,index) in 4">
+											<div class="warnListBox">
+												<span class="bgColor" v-if='index<3'>20</span>
+												<span v-if='index>2'>20</span>
+												<span>汉口银行举行“新时代 新机遇 新征程”座座...</span>
+												<span style="width: 2.1rem;">546972</span>
+												<div style="clear: both;"></div>
+											</div>
+										</li>
+									</ul>
+								</mt-loadmore>
+							</mt-tab-container-item>
+							<mt-tab-container-item id="省内热搜" class="allWarn">
+								<mt-loadmore :top-method="loadTop" ref="loadmore">
+									<ul>
+										<li v-for="(item,index) in 4">
+											<div class="warnListBox">
+												<span class="bgColor" v-if='index<3'>1</span>
+												<span v-if='index>2'>1</span>
+												<span>抵押物或者其他担保物的价款超过其所担保的债务数额的,</span>
+												<span style="width: 2.1rem;">54695572</span>
+												<div style="clear: both;"></div>
+											</div>
+										</li>
+									</ul>
+								</mt-loadmore>
+							</mt-tab-container-item>
+							<mt-tab-container-item id="市内热搜" class="allWarn">
+								<mt-loadmore :top-method="loadTop" ref="loadmore">
+									<ul>
+										<li v-for="(item,index) in 4">
+											<div class="warnListBox">
+												<span class="bgColor" v-if='index<3'>15</span>
+												<span v-if='index>2'>15</span>
+												<span>截取字符串效率要高得多而且也更简单 </span>
+												<span style="width: 2.1rem;">546972</span>
+												<div style="clear: both;"></div>
+											</div>
+										</li>
+									</ul>
+								</mt-loadmore>
+							</mt-tab-container-item>
+						</mt-tab-container>
+					</div>
+				</div>
 			</div>
 		</div>
 		<script src="./../libs/vue/vue-2.5.2.min.js"></script>

@@ -53,19 +53,19 @@ html {
 
 .specifiedCon {
 	width: 80%;
-    text-align: center;
-    margin: 0 auto;
+	text-align: center;
+	margin: 0 auto;
 }
 
 .specifiedCon ul li {
 	float: left;
-    padding: 0 .3rem 0 0;
-    list-style: none;
-    text-align: center;
-    font-size: .4rem;
-    margin: .2rem;
-    border-right: 1px solid #E4E4E4;
-    color: #29A1F7;
+	padding: 0 .3rem 0 0;
+	list-style: none;
+	text-align: center;
+	font-size: .4rem;
+	margin: .2rem;
+	border-right: 1px solid #E4E4E4;
+	color: #29A1F7;
 }
 
 
@@ -98,4 +98,96 @@ html {
 	border-radius: .15rem;
 	margin-right: .4rem;
 	border: 1px solid #E4E4E4;
+}
+
+
+/**/
+
+
+/*警示top tab切换*/
+
+.topBar {
+	width: 100%;
+}
+
+.topBar .mint-tab-item-label {
+	font-size: .6rem;
+	height: 1rem;
+	line-height: 1rem;
+}
+
+.topBar .mint-navbar {
+	background-color: transparent;
+}
+
+.topBar .mint-navbar .mint-tab-item {
+	padding: 10px 0;
+	color: #999999;
+}
+
+.mint-navbar .mint-tab-item {
+	padding: 7px 0 !important;
+	font-size: .5rem!important;
+}
+
+.topBar .mint-navbar .mint-tab-item.is-selected {
+	color: #0066FF;
+	margin-bottom: 0;
+	border-bottom: none;
+}
+
+.topBar .mint-navbar .mint-tab-item.is-selected .mint-tab-item-label {
+	border-bottom: solid 3px #0066FF;
+}
+
+
+/*警示 列表*/
+
+.allWarn li {
+	width: 100%;
+	margin: 5px 0;
+	list-style: none;
+}
+
+.allWarn .warnListBox span {
+	font-size: .5rem;
+	color: #8f8484;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	float: left;
+	margin-left: .3rem;
+	text-align: center;
+	display: block;
+	line-height: 1rem;
+}
+
+.allWarn .bgColor {
+	border-radius: 50%;
+	background-color: rgba(27, 130, 210, 1);
+	color: #ffffff !important;
+}
+
+.allWarn .warnListBox span:first-child {
+	width: 1rem;
+	margin-left: 0;
+}
+
+.allWarn .warnListBox span:nth-child(2) {
+	width: 10.4rem;
+	text-align: left;
+}
+
+.allWarn .warnListBox span:last-child {
+	width: 2rem;
+}
+
+.mint-loadmore-text {
+	font-size: .55rem;
+}
+
+.changeArt {
+	font-size: .55rem;
+	line-height: 1.5rem;
+	margin-left: 1rem;
 }
